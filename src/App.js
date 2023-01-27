@@ -72,7 +72,7 @@ function App() {
                   placeholder="Search by name"
                   ref={inputValue}
                 />
-                <button className="btn btn-primary">SEARCH</button>
+                <button className="btn btn-primary">🔍</button>
               </div>
               <select
                 className="form-select ms-auto w-25 shadow"
