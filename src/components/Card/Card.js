@@ -24,6 +24,7 @@ export const Card = ({ obj }) => {
             <strong>Capital</strong>: {obj?.capital}
           </p>
         </div>
+        
       </li>
     </div>
   );

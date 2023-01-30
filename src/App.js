@@ -3,8 +3,7 @@ import { Header } from "./components/Header";
 import { Card } from "./components/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/styles/main.css";
-import LoadingAnimation from "./assets/images/loading.gif";
-
+import LoadingAnimation from "./assets/images/loading/loading.gif";
 function App() {
   let inputValue = useRef();
   let selectValue = useRef();
@@ -51,8 +50,6 @@ function App() {
   };
 
   const handleSelect = (evt) => {
-    console.log(evt, "select");
-    console.log(selectValue);
     if (selectValue.current.value === "All") getCountries("all");
     else if (selectValue.current.value)
       getCountries(`region/${selectValue.current.value}`);
@@ -72,7 +69,7 @@ function App() {
                   placeholder="Search by name"
                   ref={inputValue}
                 />
-                <button className="btn btn-primary">🔍</button>
+                <button className="btn btn-light">🔍</button>
               </div>
               <select
                 className="form-select ms-auto w-25 shadow"
@@ -90,12 +87,13 @@ function App() {
             {counties.isError ? <h2>{counties.isError}</h2> : ""}
             {counties.isLoading ? (
               <img
-                className="loading m-auto"
+              width={500}
+              height={500}
                 src={LoadingAnimation}
-                width="200"
-                height="200"
                 alt="Loading animation"
+                style={{position:"absolute",top:"100px",bottom:"0",left:"0",right:"0",margin:"auto",zIndex:"999"}}
               />
+
             ) : (
               ""
             )}
