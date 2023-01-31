@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Header } from "./components/Header";
 import { Card } from "./components/Card";
+import { SingleCountry } from "./components/SingleCountry";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/styles/main.css";
 import LoadingAnimation from "./assets/images/loading/loading.gif";
+import { Routes, Route } from "react-router-dom";
 function App() {
   let inputValue = useRef();
   let selectValue = useRef();
@@ -84,17 +86,21 @@ function App() {
                 <option value="Oceania">Oceania</option>
               </select>
             </form>
-            {counties.isError ? <h2>{counties.isError}</h2> : ""}
+           <div>
+           {counties.isError ? <h2>{counties.isError}</h2> : ""}
             {counties.isLoading ? (
+              document.body.style.backgroundColor = "#383d3a",
+              <Header style={{backgroundColor:"red"}}></Header>,
               <img
               width={500}
               height={500}
                 src={LoadingAnimation}
                 alt="Loading animation"
-                style={{position:"absolute",top:"100px",bottom:"0",left:"0",right:"0",margin:"auto",zIndex:"999"}}
+                style={{position:"absolute",top:"200px",bottom:"0",left:"0",right:"0",margin:"auto",zIndex:"999"}}
               />
 
             ) : (
+              document.body.style.backgroundColor = "#fff",
               ""
             )}
             {counties.data.length ? (
@@ -106,6 +112,14 @@ function App() {
             ) : (
               ""
             )}
+            <Routes>
+          <Route
+            path="/"
+            element={<Card /> } 
+          />
+          <Route path="/name/:name" element={<SingleCountry/>} />
+        </Routes>
+           </div>
           </div>
         </section>
       </main>

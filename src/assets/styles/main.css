@@ -24,3 +24,22 @@ img {
   vertical-align: middle;
   object-fit: cover;
 }
+
+header{
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 9;
+}
+
+.card{
+  min-height: 420px;
+}
+
+.link{
+position: absolute;
+display: block;
+bottom: 10px;
+left: 15px;
+right: 15px;
+}
