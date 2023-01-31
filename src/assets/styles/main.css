@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   height: 100%;
   margin: 0;
+  transition: all ease-in-out 0.5s;
 }
 
 main {
@@ -30,6 +31,7 @@ header{
   top: 0;
   background: #fff;
   z-index: 9;
+  transition: all ease-in-out 0.5s;
 }
 
 .card{
@@ -43,3 +45,13 @@ bottom: 10px;
 left: 15px;
 right: 15px;
 }
+
+.mode{
+  background: #4b4b4b !important;
+}
+
+.h-mode{
+  background: #4b4b4b !important;
+  color: white !important;
+}
+
